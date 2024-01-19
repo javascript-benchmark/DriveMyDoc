@@ -1,0 +1,17 @@
+<mat-sidenav-container id="sidenav-main-container">
+  <mat-sidenav id="search-sidenav" #searchsidenav position="end">
+    <app-search [searchsidenav]="searchsidenav"></app-search>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-toolbar [searchsidenav]="searchsidenav"></app-toolbar>
+    <div id="main-container">
+      <div id="side-bar-navigator-container">
+        <app-side-bar-navigator [folders]="folders" [files]="files"></app-side-bar-navigator>
+      </div>
+      <div id="file-viewer-container" class="embedded">
+        <app-file-viewer></app-file-viewer>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

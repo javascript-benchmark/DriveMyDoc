@@ -1,0 +1,32 @@
+
+.expend-row-button {
+  margin-right: 2em;
+}
+
+.mat-tree-node {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: #616161;
+  padding-left: 1.2em;
+  height: 3em;
+}
+
+.mat-tree-node:hover {
+  background-color: #e6ecf1;
+}
+
+.file-redirect {
+  display: -webkit-box;
+  text-decoration: none;
+  height: inherit;
+  width: inherit;
+  padding-top: 1.7em;
+  color: #616161;
+}
+
+.mat-list-item {
+  padding: 0 !important;
+}

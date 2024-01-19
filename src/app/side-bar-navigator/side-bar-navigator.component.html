@@ -1,0 +1,8 @@
+
+<mat-list *ngFor="let folder of folders" class="side-bar-first-element">
+  <app-first-level-folder [folder]="folder"></app-first-level-folder>
+</mat-list>
+
+<mat-list>
+  <app-file-item *ngFor="let file of files" [file]="file"></app-file-item>
+</mat-list>

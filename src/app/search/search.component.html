@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <form class="search-form">
+      <mat-form-field>
+        <div class="input-with-icon">
+          <input matInput type="text" [(ngModel)]="query" (ngModelChange)="searching($event)" name="search-query">
+          <mat-icon id="search-icon" matSuffix>search</mat-icon>
+        </div>
+      </mat-form-field>
+    </form>
+</mat-toolbar>
+<div>
+  <mat-list *ngFor="let file of searchResult">
+    <a routerLink="/" [queryParams]="{ fileId: file.id }" class="search-link" (click)="searchResultOnClick()">
+      <mat-list-item>
+       {{file.name}}
+      </mat-list-item>
+    </a>
+  </mat-list>
+</div>

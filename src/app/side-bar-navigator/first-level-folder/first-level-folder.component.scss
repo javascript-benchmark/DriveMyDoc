@@ -1,0 +1,57 @@
+@import "../../_variables.scss";
+
+.mat-list-item {
+  color: #9DAAB6;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 !important;
+}
+
+.expend-row-button {
+  margin-right: 2em;
+}
+
+.mat-tree {
+  background-color: #F5F7F9;
+}
+
+.mat-tree-node {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: #5C6975;
+  padding-left: 1.2em;
+  min-height: 2em;
+  height: 3em;
+}
+
+.mat-tree-node-file:hover {
+  background-color: #e6ecf1;
+}
+
+.file-redirect {
+  display: -webkit-box;
+  text-decoration: none;
+  height: inherit;
+  width: inherit;
+  color: inherit;
+  padding-top: 1.7em;
+}
+
+.selected-node {
+  background-color: white;
+  border: 1px solid #e6ecf1;
+  border-right: 0;
+  color: $primary;
+}
+
+.selected-node:hover {
+  background-color: white;
+}
+
+
+.mat-spinner::ng-deep circle {
+  stroke: $primary!important;
+}

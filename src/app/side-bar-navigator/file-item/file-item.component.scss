@@ -1,0 +1,43 @@
+@import "../../_variables.scss";
+
+.mat-list-item {
+  font-size: 13px;
+  color: inherit;
+  padding: 0 !important;
+}
+
+.file-redirect {
+  display: -webkit-box;
+  text-decoration: none;
+  height: inherit;
+  width: inherit;
+  color: inherit;
+}
+
+.file-redirect:hover {
+  background-color: #e6ecf1;
+}
+
+.selected-node {
+  background-color: white;
+  border: 1px solid #e6ecf1;
+  border-right: 0;
+  color: $primary;
+}
+
+.selected-node:hover {
+  background-color: white;
+}
+
+.mat-tree-node {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: #5C6975;
+  padding-left: 1.2em;
+  min-height: 2em;
+  height: 3em;
+}
+

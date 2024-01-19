@@ -1,0 +1,44 @@
+@import "../_variables.scss";
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.image-profile {
+  border-radius: 50%;
+  height: 1.8em;
+  margin-left: 1em;
+}
+
+mat-toolbar {
+  position: relative;
+  background-color: $primary;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+#image-span {
+  height: 36px;
+}
+
+#toolbar-title {
+  color: white;
+}
+
+.search-form {
+  color: white;
+  width: 12em;
+}
+
+#search-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.2em;
+  transform: translateY(-50%);
+}
+
+.input-with-icon {
+  position: relative;
+  padding-right: 1.5em;
+}

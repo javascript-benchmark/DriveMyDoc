@@ -1,0 +1,8 @@
+
+<span *ngIf="!markdown">
+  <iframe *ngIf="fileId" [src]="safeUrl" style="height: 100%; width: 100%" frameBorder="0"></iframe>
+</span>
+
+<div *ngIf="markdown" class="markdown-body">
+  <div markdown [data]="markdown"></div>
+</div>

@@ -1,0 +1,33 @@
+@import "../_variables.scss";
+
+#top-header {
+  height: 50%;
+  background-color: $primary;
+  position: relative;
+}
+
+#bottom-header {
+  height: 50%;
+  position: relative;
+}
+
+#login-title {
+  position: absolute;
+  bottom: 0;
+  font-size: 5em;
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+#google-login-button {
+  position: absolute;
+  text-align: center;
+  margin-top: 3em;
+  width: 100%;
+}
+
+.g-signin2 {
+  display: -webkit-inline-box;
+}

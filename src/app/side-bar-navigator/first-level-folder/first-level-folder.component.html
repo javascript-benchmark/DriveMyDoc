@@ -1,0 +1,28 @@
+
+<mat-list-item> {{folder.name | uppercase}} </mat-list-item>
+
+<mat-tree class="root-mat-tree" [(dataSource)]="dataSource" [treeControl]="treeControl">
+  <!-- This is the tree node template for leaf nodes -->
+  <mat-tree-node class="mat-tree-node-file" *matTreeNodeDef="let node" matTreeNodePadding [class.selected-node]="currentSelectedFileId === node.source.id">
+    <!-- use a disabled button to provide padding for tree leaf -->
+    <a class="file-redirect" [routerLink]="['']" [queryParams]="{fileId: node.source.id}">
+      {{removeExtension(node.name)}}
+    </a>
+    <button mat-icon-button disabled></button>
+  </mat-tree-node>
+  <!-- This is the tree node template for expandable nodes -->
+  <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+    <a class="file-redirect" [routerLink]="['']" [queryParams]="{fileId: node.source.id}">
+      {{removeExtension(node.name)}}
+    </a>
+    <div class="expend-row-button">
+      <button mat-button mat-icon-button matTreeNodeToggle
+              [attr.aria-label]="'toggle ' + node.name">
+        <mat-spinner *ngIf="node.isLoading" [diameter]="20"></mat-spinner>
+        <mat-icon class="mat-icon-rtl-mirror" *ngIf="!node.isLoading">
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+    </div>
+  </mat-tree-node>
+</mat-tree>

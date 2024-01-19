@@ -1,0 +1,4 @@
+
+<a class="file-redirect" [routerLink]="['']" [queryParams]="{fileId: file.id}" [class.selected-node]="currentSelectedFileId === file.id">
+  <mat-list-item>{{removeExtension(file.name)}}</mat-list-item>
+</a>

@@ -1,0 +1,13 @@
+@import "../_variables.scss";
+
+mat-form-field {
+  width: calc(100% - 1em);
+}
+
+.search-form {
+  width: 100%;
+}
+
+.search-link {
+  text-decoration: none;
+}

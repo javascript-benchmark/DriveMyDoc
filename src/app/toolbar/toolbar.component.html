@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span id="toolbar-title">Drive My Doc</span>
+    <span class="spacer"></span>
+    <span>
+      <form>
+        <mat-form-field class="search-form">
+          <div class="input-with-icon">
+            <input matInput (click)="searchsidenav.toggle()">
+            <mat-icon id="search-icon" matSuffix>search</mat-icon>
+          </div>
+        </mat-form-field>
+      </form>
+    </span>
+
+    <span id="image-span">
+        <img class="image-profile" [src]="user.imageUrl" [matMenuTriggerFor]="appMenu">
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu>

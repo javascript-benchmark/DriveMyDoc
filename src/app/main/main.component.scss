@@ -1,0 +1,37 @@
+#main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: calc(100% - 64px);
+}
+
+#sidenav-main-container {
+  height: 100%
+}
+
+#side-bar-navigator-container {
+  width: 20em;
+  background-color: #F5F7F9;
+  height: calc(100% - 1.5em);
+  overflow: scroll;
+  padding-left: 3.5em;
+  padding-top: 1.5em;
+  margin-bottom: 0;
+}
+
+#file-viewer-container {
+  flex: 1 0 0;
+  height: 100%;
+  //background-color: lightblue;
+}
+
+.embedded {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+#search-sidenav {
+  width: 22em;
+}

@@ -1,0 +1,51 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Setup nodejs
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10
+
+    - name: Build
+      run: |
+        npm install
+        npm install -g @angular/cli
+        ng build --prod --base-href https://drivemydoc.bhacaz.com/
+        mv CNAME dist/DriveMyDoc/
+      env:
+        CI: true
+
+    - name: GitHub Pages Deploy
+      env:
+        GH_PAT: ${{secrets.GH_PAT}}
+      if: contains(github.ref, 'master')
+      run: |
+        set -e
+        BUILD_DIR="dist/DriveMyDoc"
+        cd $BUILD_DIR
+        echo "Now deploying to GitHub Pages..."
+        REMOTE_REPO="https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}.git" && \
+        REPONAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)" && \
+        OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)" && \
+        REMOTE_BRANCH="gh-pages"
+        echo $REMOTE_REPO
+        git init && \
+        git config user.name "${GITHUB_ACTOR}" && \
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
+        if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing to commit" && \
+            exit 0
+        fi && \
+        git add . && \
+        git commit -m 'Deploy to GitHub Pages' && \
+        git push --force $REMOTE_REPO master:$REMOTE_BRANCH && \
+        rm -fr .git && \
+        cd $GITHUB_WORKSPACE && \
+        echo "Content of $BUILD_DIR has been deployed to GitHub Pages."
